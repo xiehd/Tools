@@ -1,0 +1,12 @@
+1、将speechcloud目录拷贝至设备的sd卡目录；
+2、将xunfei.apk按照到设备上。
+3、将TtsUtil.java工具里拷贝到工程。
+4、在工程启动时初始化，代码如下
+ SpeechUtility.createUtility(getApplicationContext(), "appid="
+				+ getString(R.string.app_id));
+		TtsUtil.getInstance(getApplicationContext());
+
+5、在String.xml里面添加appid的属性值
+ <string name="app_id">53ed5edd</string>
+6、直接调用接口接口实现语音播报了。
+ TtsUtil.getInstance(MainActivity.this).startSpeak("msg");
